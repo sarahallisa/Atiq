@@ -1,0 +1,61 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="" *ngIf="productData != null">
+  <div>
+    <ngb-carousel *ngIf="imageUrl" class="product-page">
+      <ng-template ngbSlide *ngFor="let img of imageUrl">
+        <div class="picsum-img-wrapper d-flex justify-content-center"  >
+          <div class="crop-image d-flex justify-content-center">
+            <img [src]="img" alt="Random first slide" />
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+
+  <div>
+
+  </div>
+
+  <div class="text-center mt-5">
+    <p class="fw-bold">{{productData.title}}</p>
+    <p>{{productData.description}}</p>
+<!--    <div class="row text-center">-->
+<!--      <div class="col-6">-->
+<!--        <p class="fw-bold">{{productData.price}} $</p>-->
+<!--      </div>-->
+<!--      <div class="col-6">-->
+<!--        <p class="fw-bold float-start">{{productData.priceStatus}}</p>-->
+<!--      </div>-->
+
+    <p class="fw-bold mb-4">{{productData.price}}$       {{productData.priceStatus }}</p>
+    <p>{{productData.seller.firstname}}{{" " + productData.seller.lastname}}</p>
+    <div class="like-btn " *ngIf="authService.isLoggedIn()">
+      <button class="btn btn-lg  mb-3" (click)="onLike()" id="heart">
+        <ng-container *ngIf="isSellerLiked; then heartIsClicked; else heartIsNotClicked"></ng-container>
+      </button>
+      <ng-template #heartIsClicked>
+        <i class="fa fa-heart" style="color: #D0312D"></i>
+      </ng-template>
+      <ng-template #heartIsNotClicked>
+        <i class="fa fa-heart-o"></i>
+      </ng-template>
+
+    </div>
+    <button class="btn  btn-lg text-white mb-4" *ngIf="productData.seller.id != authService.getId()" (click)="openRoom(productData.seller.id)">Contact Seller</button>
+<!--    <div class="like-btn " *ngIf="authService.isLoggedIn()">-->
+<!--      <button class="btn btn-lg float-end" (click)="onLike()" id="heart">-->
+<!--        <ng-container *ngIf="isSellerLiked; then heartIsClicked; else heartIsNotClicked"></ng-container>-->
+<!--      </button>-->
+<!--      <ng-template #heartIsClicked>-->
+<!--        <i class="fa fa-heart" style="color: #D0312D"></i>-->
+<!--      </ng-template>-->
+<!--      <ng-template #heartIsNotClicked>-->
+<!--        <i class="fa fa-heart-o"></i>-->
+<!--      </ng-template>-->
+
+<!--    </div>-->
+  </div>
+
+</div>

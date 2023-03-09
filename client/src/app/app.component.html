@@ -1,0 +1,47 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light navbar-customisation mb-0">
+  <div class="container-fluid">
+    <a class="navbar-brand custom-green fw-bold" routerLink='/home'>ATIQ</a>
+
+    <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
+
+    <!-- Step 2: Add the ngbCollapse directive to the element below. -->
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <div *ngIf="authService.isLoggedIn() && authService.isSeller()">
+          <li class="nav-item">
+            <button class="button_plus" routerLink='/form' (click)="isMenuCollapsed = true">+ Product</button>
+          </li>
+        </div>
+        <div *ngIf="authService.isLoggedIn()">
+          <li class="nav-item">
+            <a class="nav-link custom-green" routerLink='/' (click)="logOut()">Logout</a>
+          </li>
+        </div>
+        <div *ngIf="!authService.isLoggedIn()">
+          <li class="nav-item active">
+            <!-- Step 4: Close the menu when a link is clicked. -->
+            <a class="nav-link custom-green" routerLink='/login' (click)="isMenuCollapsed = true">Login</a>
+          </li>
+        </div>
+        <div *ngIf="!authService.isLoggedIn()">
+          <li class="nav-item">
+            <a class="nav-link custom-green" routerLink='/register' (click)="isMenuCollapsed = true">Register</a>
+          </li>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link custom-green" routerLink="/chat" (click)="isMenuCollapsed = true">Chat</a>
+        </li>
+        <!--li class="nav-item">
+          <a class="nav-link custom-green" routerLink="/profile" (click)="isMenuCollapsed = true">Favorites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-green" [routerLink]="'.'" (click)="isMenuCollapsed = true">Admin</a>
+        </li-->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

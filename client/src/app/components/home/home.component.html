@@ -1,0 +1,29 @@
+<head>
+  <!-- icons -->
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<div class="home-page">
+  <div class="float-start mt-5 mb-3 ms-2">
+    <div *ngIf="authService.isLoggedIn()">
+      <div ngbDropdown class="d-inline-block ">
+        <button type="button " class="btn btn-light" id="dropdownBasic1" ngbDropdownToggle>
+          {{filter}}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" [(ngModel)]="filter">
+          <button ngbDropdownItem (click)="setFilter('All')">All</button>
+          <button ngbDropdownItem (click)="setFilter('Favorite Products')">Favorite Products</button>
+          <button ngbDropdownItem (click)="setFilter('Favorite Sellers')">Favorite Sellers</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container ">
+    <div class="row mt-5">
+      <div class="col-lg-3 col-md-6 col-sm-12 mt-4" *ngFor="let product of productList">
+        <app-item [product]="product"></app-item>
+      </div>
+      <span style="height: 20px"></span>
+    </div>
+  </div>
+</div>

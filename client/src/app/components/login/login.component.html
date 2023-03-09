@@ -1,0 +1,35 @@
+
+<div class="">
+<h1 class="text-center pt-5 fs-1 fw-bold">Log in</h1>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit() "  class="text-center ">
+  <div class="mb-3 pt-5 ">
+    <label for="exampleInputEmail1" class="form-label fw-bold ">Username</label>
+    <div class="d-flex justify-content-center">
+    <input type="text" class="form-control rounded-pill " id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="username"
+     [ngClass]="{'is-invalid': loginForm.controls['username'].errors && loginForm.controls['username'].touched }"
+    >
+
+    </div>
+    <div *ngIf="loginForm.controls['username'].errors" id="emailHelp" class="form-text">Username is required.</div>
+  </div>
+  <div class="mb-3 pt-5 ">
+    <label for="exampleInputPassword1" class="form-label fw-bold ">Password</label>
+    <div class="d-flex justify-content-center">
+    <input type="password" class="form-control rounded-pill " id="exampleInputPassword1" formControlName="password"
+           [ngClass]="{'is-invalid': loginForm.controls['password'].errors && loginForm.controls['password'].touched }"
+    >
+
+    </div>
+    <div  *ngIf="loginForm.controls['password'].errors"  class="form-text">Password is required.</div>
+  </div>
+
+
+  <button type="submit" class="btn text-white mt-4 " [disabled]="!loginForm.valid" >Login</button>
+</form>
+
+  <div class="alert alert-danger alertMessage mx-auto text-center mt-4 rounded-pill" role="alert" *ngIf="loginError.length>1">
+    {{loginError}}
+  </div>
+</div>
+
+

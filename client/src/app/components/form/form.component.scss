@@ -1,0 +1,141 @@
+div {text-align: center}
+span {
+  width: 150px;
+  background: #A6BB8D;
+}
+
+.span-description {
+  width: 100px;
+  background: #A6BB8D;
+}
+
+.span-pictures {
+  width: 130px;
+  background: #A6BB8D;
+}
+
+.form-page {
+  position: fixed;
+  width: 50px;
+  height: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+  background-color: #A6BB8D;
+}
+
+.title-input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.title-input-label {
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  color: whitesmoke;
+}
+
+#title-input {
+  border: solid #61876E 1px;
+  height: 30px;
+  width: 300px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  background: #EAE7B1;
+}
+
+.desciption-input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.desciption-input-label {
+  margin-right: 16px;
+  font-size: 17px;
+  color: whitesmoke;
+}
+
+#description-input {
+  border: solid #61876E 1px;
+  height: 130px;
+  width: 300px;
+  margin-right: 16px;
+  font-size: 17px;
+  background: #EAE7B1;
+}
+
+.price-input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.price-input-label {
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  color: whitesmoke;
+}
+
+#price-input {
+  border: solid #61876E 1px;
+  height: 30px;
+  width: 100px;
+  margin-top: 8px;
+  margin-right: 12px;
+  font-size: 17px;
+  background: #EAE7B1;
+}
+
+#price-input-dropdown-select {
+  border: solid #61876E 1px;
+  height: 30px;
+  width: 190px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  background: #EAE7B1;
+}
+
+.picture-input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.picture-input-label {
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  color: whitesmoke;
+}
+
+.picture-input-area {
+  border: solid #61876E 1px;
+  height: 130px;
+  width: 300px;
+  margin-right: 16px;
+  background: #EAE7B1;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+#radio-price-status {
+  border: solid #61876E 1px;
+  height: 30px;
+  width: 190px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  background: #EAE7B1;
+  display: flex;
+  justify-content: space-evenly;
+}

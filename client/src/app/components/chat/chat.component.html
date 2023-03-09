@@ -1,0 +1,85 @@
+<div class="row">
+  <!-- Left section -->
+  <div class="column">
+    <div class="menu-container">
+      <div *ngFor="let room of rooms">
+        <div class="box">
+          <div class="users" [ngClass]="{'highlighted': room.id == selectedRoom!!.id}" (click)="onSelect(room)">
+            <div *ngIf="room.buyer.id == authService.getId()">
+              {{room.seller.firstname}}
+              {{" " + room.seller.lastname}}
+            </div>
+            <div *ngIf="room.seller.id == authService.getId()">
+              {{room.buyer.firstname}}
+              {{" " + room.buyer.lastname}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right section -->
+  <div class="column">
+    <div class="chat-container ">
+
+      <header class="chat-header">
+        <div class="chat-header-title">
+          <div *ngIf="selectedRoom!!.buyer.id == authService.getId()">
+            {{selectedRoom!!.seller.firstname}}
+            {{" " + selectedRoom!!.seller.lastname}}
+          </div>
+          <div *ngIf="selectedRoom!!.seller.id == authService.getId()">
+            {{selectedRoom!!.buyer.firstname}}
+            {{" " + selectedRoom!!.buyer.lastname}}
+          </div>
+        </div>
+      </header>
+
+      <div class="chats-messages ">
+        <div *ngFor="let message of shownMessages" >
+          <div *ngIf="message.sender.id == authService.getId()">
+            <div class="chats right-chat mb-3">
+              <div class="chats-img" style="background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F6386%2F6386976.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Favatar_6386976&tbnid=De-vJj97ux0nrM&vet=10CAQQxiAoAmoXChMI0IDg9uH-_AIVAAAAAB0AAAAAEAc..i&docid=scWiTbY2IW-F0M&w=512&h=512&itg=1&q=avatar%20icon&hl=en-GB&ved=0CAQQxiAoAmoXChMI0IDg9uH-_AIVAAAAAB0AAAAAEAc)">
+              </div>
+              <div class="chats-bubble">
+                <div class="chats-info">
+                  <div *ngIf="selectedRoom!!.buyer.id == authService.getId()">
+                    {{selectedRoom!!.buyer.firstname}}
+                  </div>
+                  <div *ngIf="selectedRoom!!.seller.id == authService.getId()">
+                    {{selectedRoom!!.seller.firstname}}
+                  </div>
+                </div>
+                {{message.message}}
+              </div>
+            </div>
+          </div>
+          <div *ngIf="message.sender.id != authService.getId()">
+            <div class="chats left-chat mb-3">
+              <div class="chats-img" style="background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F6386%2F6386976.png&imgrefurl=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Favatar_6386976&tbnid=De-vJj97ux0nrM&vet=10CAQQxiAoAmoXChMI0IDg9uH-_AIVAAAAAB0AAAAAEAc..i&docid=scWiTbY2IW-F0M&w=512&h=512&itg=1&q=avatar%20icon&hl=en-GB&ved=0CAQQxiAoAmoXChMI0IDg9uH-_AIVAAAAAB0AAAAAEAc)">
+              </div>
+              <div class="chats-bubble">
+                <div class="chats-info">
+                  <div *ngIf="selectedRoom!!.buyer.id == authService.getId()">
+                    {{selectedRoom!!.seller.firstname}}
+                  </div>
+                  <div *ngIf="selectedRoom!!.seller.id == authService.getId()">
+                    {{selectedRoom!!.buyer.firstname}}
+                  </div>
+                </div>
+                {{message.message}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" placeholder="Write here..">
+      <button (click)="sendMessage()">Send</button>
+    </div>
+
+  </div>
+</div>

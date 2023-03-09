@@ -1,0 +1,51 @@
+p {text-align: center}
+div {text-align: center}
+
+.home-page {
+  position: absolute;
+  height: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+  background-color: #3C6255;
+}
+
+.search-container input[type=text] button {
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+.search-container button {
+  margin-top: 20px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+.box {
+  border: 0px;
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  background: #A6BB8D;
+  border-radius: 25px;
+  position: relative;
+}
+
+.like-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+}
+

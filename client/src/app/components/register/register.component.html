@@ -1,0 +1,64 @@
+
+
+<div class="">
+  <h1 class="text-center pt-5 fs-1 fw-bold">Sign up </h1>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit() "  class="text-center ">
+    <div class="pt-4 ">
+      <label for="exampleInputEmail1" class="form-label fw-bold ">Username</label>
+      <div class="d-flex justify-content-center">
+        <input type="text" class="form-control rounded-pill " id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="username"
+               [ngClass]="{'is-invalid': registerForm.controls['username'].errors && registerForm.controls['username'].touched }"
+        >
+
+      </div>
+      <div *ngIf="registerForm.controls['username'].errors" id="emailHelp" class="form-text">Username is required.</div>
+    </div>
+    <div class="pt-5 ">
+      <label for="exampleInputEmail1" class="form-label fw-bold ">Firstname</label>
+      <div class="d-flex justify-content-center">
+        <input type="text" class="form-control rounded-pill " id="firstname" aria-describedby="emailHelp" formControlName="firstname"
+               [ngClass]="{'is-invalid': registerForm.controls['firstname'].errors && registerForm.controls['firstname'].touched }"
+        >
+
+      </div>
+      <div *ngIf="registerForm.controls['firstname'].errors" id="firstnameHelp" class="form-text">FirstName is required.</div>
+    </div>
+    <div class="pt-5 ">
+      <label for="exampleInputEmail1" class="form-label fw-bold ">LastName</label>
+      <div class="d-flex justify-content-center">
+        <input type="text" class="form-control rounded-pill " id="lastName" aria-describedby="emailHelp" formControlName="lastname"
+               [ngClass]="{'is-invalid': registerForm.controls['lastname'].errors && registerForm.controls['lastname'].touched }"
+        >
+
+      </div>
+      <div *ngIf="registerForm.controls['lastname'].errors" id="lastNameHelp" class="form-text">Lastname is required.</div>
+    </div>
+    <div class="pt-5 ">
+      <label for="exampleInputPassword1" class="form-label fw-bold ">Password</label>
+      <div class="d-flex justify-content-center">
+        <input type="password" class="form-control rounded-pill " id="exampleInputPassword1" formControlName="password"
+               [ngClass]="{'is-invalid': registerForm.controls['password'].errors && registerForm.controls['password'].touched }"
+        >
+
+      </div>
+      <div  *ngIf="registerForm.controls['password'].errors"  class="form-text">Password is required.</div>
+    </div>
+
+    <div class="mb-3 pt-5 ">
+      <label for="exampleInputPassword1" class="form-label fw-bold ">Confirmed password</label>
+      <div class="d-flex justify-content-center">
+        <input type="password" class="form-control rounded-pill " id="exampleInputPassword2" formControlName="confirmedPassword"
+               [ngClass]="{'is-invalid':  registerForm.hasError('passwordsNotMatching')  }"
+        >
+
+      </div>
+      <div  *ngIf="registerForm.hasError('passwordsNotMatching')"  class="form-text">Password is not matching.</div>
+    </div>
+
+    <button type="submit" class="btn text-white mt-4 "  [disabled]="!registerForm.valid">Sign Up</button>
+  </form>
+
+<!--  <div class="alert alert-danger alertMessage mx-auto text-center mt-4 rounded-pill" role="alert" *ngIf="loginError.length>1">-->
+<!--    {{loginError}}-->
+<!--  </div>-->
+</div>

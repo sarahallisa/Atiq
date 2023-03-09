@@ -1,0 +1,26 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<a>
+  <div class="card " style="width: 18rem;">
+    <div class="like-btn " *ngIf="authService.isLoggedIn()">
+      <button class="btn btn-lg float-end" (click)="onLike()" id="heart">
+        <ng-container *ngIf="isProductLiked; then heartIsClicked; else heartIsNotClicked"></ng-container>
+      </button>
+      <ng-template #heartIsClicked>
+        <i class="fa fa-heart" style="color: #D0312D"></i>
+      </ng-template>
+      <ng-template #heartIsNotClicked>
+        <i class="fa fa-heart-o"></i>
+      </ng-template>
+
+    </div>
+    <img class="card-img-top" [src]="imageUrl" alt="Product image ">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text text-white">{{product.price}} $</p>
+      <a href="#" class="btn btn-success" routerLink="/product/{{product.id}}">More</a>
+    </div>
+  </div>
+</a>
+

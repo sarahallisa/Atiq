@@ -1,0 +1,33 @@
+button{
+  background-color: #61876E;
+}
+button:hover{
+
+  background-color: #A6BB8D;
+}
+
+body{
+  background-color: #A6BB8D;
+}
+
+.product-page {
+  background-color: #3C6255;
+}
+
+.crop-image {
+  width: 1000px;
+  height: 500px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.image {
+  max-height: 100%;
+  max-width: 100%;
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  /* IE 5-7 */
+  filter: alpha(opacity=1);
+  /* modern browsers */
+  opacity: 1;
+}

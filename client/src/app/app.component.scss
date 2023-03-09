@@ -1,0 +1,35 @@
+.navbar-customisation {
+  background-color: #EAE7B1;
+}
+
+.custom-green {
+  color: #3C6255;
+}
+
+.button_plus {
+  text: "+";
+  width: 90px;
+  height: 35px;
+  background: #3C6255;
+  cursor: pointer;
+  color: #EAE7B1;
+}
+
+.button_plus:after {
+  background: #EAE7B1;
+}
+
+.button_plus:before {
+  background: #EAE7B1;
+}
+
+.button_plus:hover:before,
+.button_plus:hover:after {
+  background: #3C6255;
+  transition: 0.2s;
+}
+
+.button_plus:hover {
+  background-color: #61876E;
+  transition: 0.2s;
+}

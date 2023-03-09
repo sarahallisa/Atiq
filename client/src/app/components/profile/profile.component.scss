@@ -1,0 +1,118 @@
+div {text-align: center}
+p {text-align: center}
+
+.profile-page {
+  position: fixed;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  height: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+  background-color: #61876E;
+}
+
+.box {
+  top: 20px;
+  border: 0px;
+  width: 500px;
+  height: 205px;
+  margin: 10px;
+  padding: 10px;
+  background: #A6BB8D;
+  border-radius: 25px;
+  position: relative;
+}
+
+.box i {
+  font-size: 150px;
+  color: #3C6255;
+}
+
+.box p {
+  font-size: 20px;
+}
+
+.userbox-container {
+  position: fixed;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  top: 320px;
+  width: 100%;
+  height: 195px;
+  background-color: #EAE7B1;
+  overflow-x: scroll;
+}
+
+.userbox-container p {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.userbox {
+  top: 30px;
+  border: 0px;
+  width: 200px;
+  height: 130px;
+  margin: 10px;
+  padding: 10px;
+  background: #A6BB8D;
+  border-radius: 25px;
+  position: relative;
+}
+
+.userbox i {
+  font-size: 70px;
+  color: #3C6255;
+}
+
+.userbox p {
+  font-size: 15px;
+  left: 0;
+  position: relative;
+}
+
+.article-container {
+  position: fixed;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  top: 550px;
+  width: 100%;
+  height: 200px;
+  background-color: #EAE7B1;
+  overflow-x: scroll;
+}
+
+.article-container p {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.articlebox {
+  top: 40px;
+  border: 0px;
+  height: 130px;
+  width: 160px;
+  margin: 10px;
+  padding: 10px;
+  background: #A6BB8D;
+  border-radius: 25px;
+  position: relative;
+}
+
+.articlebox-p {
+  position: absolute;
+}
+
+.like-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+}

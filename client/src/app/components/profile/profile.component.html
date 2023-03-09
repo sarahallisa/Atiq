@@ -1,0 +1,39 @@
+<head>
+  <!-- icons -->
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<div class="profile-page">
+  <div class="box">
+    <i class="fa fa-user"></i>
+    <p>Username</p>
+  </div>
+
+  <div class="userbox-container">
+    <p>Favorite Sellers</p>
+    <div class="userbox" *ngFor="let seller of sellers">
+      <i class="fa fa-user"></i>
+      <p>{{seller}}</p>
+    </div>
+  </div>
+
+  <div class="article-container">
+    <p>Favorite Articles</p>
+    <div class="articlebox" *ngFor="let item of items">
+      <p>{{item}}</p>
+      <button class="like-button" (click)="onDislike()">
+        <ng-container *ngIf="heartClicked; then heartIsNotClicked; else heartIsClicked"></ng-container>
+      </button>
+    </div>
+  </div>
+
+  <ng-template #heartIsClicked>
+    <i class="fa fa-heart-o"></i>
+  </ng-template>
+
+  <ng-template #heartIsNotClicked>
+    <i class="fa fa-heart" style="color: #D0312D"></i>
+  </ng-template>
+
+</div>
+
